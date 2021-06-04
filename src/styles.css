@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    max-width: 500px;
+    border: 1px solid black;
+    margin: 50px auto;
+    min-height: 500px;
+    padding: 20px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
