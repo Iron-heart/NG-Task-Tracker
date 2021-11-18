@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
-import {Observable} from 'rxjs'
-import {Task} from '../Task'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Task } from '../Task';
 
-const httpOptions : Object = {
+const httpOptions: Object = {
   Headers: new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   }),
-}
+};
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TaskService {
   private apiUrl = 'http://localhost:5000/tasks';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.apiUrl)
+    return this.http.get<Task[]>(this.apiUrl);
   }
 
   deleteTask(task: Task): Observable<Task> {
@@ -31,7 +31,7 @@ export class TaskService {
     return this.http.put<Task>(url, task, httpOptions);
   }
 
-  addTask(task: Task) : Observable<Task> {
-    return this.http.post<Task>(this.apiUrl, task, httpOptions)
+  addTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.apiUrl, task, httpOptions);
   }
 }
